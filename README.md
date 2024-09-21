@@ -17,7 +17,7 @@ Git: v~2.46.1.
 Github: una cuenta inscrita.
 
 ## Bibliografia
-- [Ejercicios](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://virtual.tdea.edu.co/pluginfile.php/271327/mod_resource/content/1/pROYECTOS_AULA_PROGRAMACI%C3%93N.pdf)
+- [Ejercicios](https://virtual.tdea.edu.co/mod/resource/view.php?id=172514)
 - [Repositorio](https://github.com/Sonny97/Sistema-de-Gesti-n-de-Biblioteca)
 
 ## Involucrados
