@@ -11,10 +11,10 @@ Una biblioteca necesita un sistema para gestionar sus libros y las personas que 
 
 
 ## Aspectos tecnologicos
-Python: v3.12.6.
-Vs Codde: v1.88.1.
-Git: v2.46.1.
-Github: una cuenta inscrita.
+Python: v3.12.6.  
+Vs Codde: v1.88.1.  
+Git: v2.46.1.  
+Github: una cuenta inscrita.  
 
 ## Bibliografia
 - [Ejercicios](https://virtual.tdea.edu.co/mod/resource/view.php?id=172514)
