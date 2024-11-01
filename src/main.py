@@ -1,3 +1,9 @@
+from data.books import books
+from data.users import users
+
+print(books)
+print(users)
+
 class Main:
 
     def lendBookMenu(self):
