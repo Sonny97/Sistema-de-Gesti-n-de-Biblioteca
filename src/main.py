@@ -1,7 +1,7 @@
 from models.books.EBook import EBook
 from models.books.PhysicalBook import PhysicalBook
 
-class main:
+class Main:
 
     def lendBookMenu(self):
         print(""" como deseas buscar el libro a prestar?
@@ -27,31 +27,31 @@ class main:
         else: print("devuelto")
 
 
-    def lendBookById(id):
+    def lendBookById(self, id):
         pass
 
-    def lendBookByTitle(title):
+    def lendBookByTitle(self, title):
         pass
 
-    def lendBookByAuthor(author):
+    def lendBookByAuthor(self, author):
         pass
 
-    def getUserById(id):
+    def getUserById(self, id):
         pass
 
-    def getBookById(id):
+    def getBookById(self, id):
         pass
 
-    def getBookByTitle(title):
+    def getBookByTitle(self, title):
         pass
 
-    def getBookByAuthor(author):
+    def getBookByAuthor(self, author):
         pass
 
     def validateUser(self, id):
         pass
 
-    def goBack():
+    def goBack(self):
         pass
 
     def generalMenu(self):
@@ -70,4 +70,8 @@ class main:
     sobreviviendoAEscobar = EBook("0", "Sobreviviendo a Escobar", "JJ", "100", "un libro mas", "3", "2020")
     LaBiblia = EBook("1", "La Santa Biblia", "Diosito", "1000", "el libro de la vida", "100", "0")
     LaBiblia = PhysicalBook("1", "La Santa Biblia", "Diosito", "100", "el libro de la vida", "100", "0", False)
-    generalMenu()
+
+
+project = Main()
+
+project.generalMenu()
