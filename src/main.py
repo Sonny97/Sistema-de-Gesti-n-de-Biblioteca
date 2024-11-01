@@ -17,7 +17,10 @@ class Main:
 
         eleccion = int(input("            Por favor, ingresa el número de tu elección: "))
 
-        if (eleccion == 1): self.getBookById()
+        if (eleccion == 1):
+            bookId = input("\n\n            Por favor, ingresa el ID del libro: ")
+            self.getBookById(bookId)
+
         elif (eleccion == 2): self.lendBookByTitle()
         elif (eleccion == 3): self.lendBookByAuthor()
         elif (eleccion == 4): self.generalMenu()
@@ -45,7 +48,17 @@ class Main:
         pass
 
     def getBookById(self, id):
-        pass
+        bookFound = None
+
+        for book in books["ebooks"] + books["physical_books"]:
+            if book.id == id:
+                bookFound = book
+                break
+
+        if bookFound:
+            print("\n\n            ¡Libro encontrado! \n", bookFound)
+        else:
+            print("Libro no encontrado")
 
     def getBookByTitle(self, title):
         pass
