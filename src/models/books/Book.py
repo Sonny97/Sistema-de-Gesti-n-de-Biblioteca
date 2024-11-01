@@ -10,7 +10,10 @@ class Book:
 
 
     def describeBook(self):
-        pass
+        return print(f"Title: {self.title}\nAuthor: {self.author}\nPages: {self.pages}\nDescription: {self.description}\nQuantity: {self.quantity}\nPublication Year: {self.publicationYear}")
 
     def validateQuantity(self):
-        pass
+        if self.quantity > 0:
+            return True
+        else:
+            return False
