@@ -1,4 +1,4 @@
-from Book import Book
+from .Book import Book
 
 class EBook(Book):
 
