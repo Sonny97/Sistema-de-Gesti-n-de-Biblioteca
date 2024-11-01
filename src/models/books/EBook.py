@@ -6,5 +6,5 @@ class EBook(Book):
         super().__init__(id, title, author, pages, description, quantity, publicationYear)
 
 
-    def download(id):
+    def download(self, id):
         pass

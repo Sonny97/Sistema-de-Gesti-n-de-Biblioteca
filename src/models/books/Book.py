@@ -9,8 +9,8 @@ class Book:
         self.publicationYear = publicationYear
 
 
-    def describeBook():
+    def describeBook(self):
         pass
 
-    def validateQuantity():
+    def validateQuantity(self):
         pass
