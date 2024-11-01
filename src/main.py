@@ -17,15 +17,17 @@ class Main:
 
         eleccion = int(input("            Por favor, ingresa el número de tu elección: "))
 
-        if(eleccion == 1): self.getBookById()
+        if (eleccion == 1): self.getBookById()
         elif (eleccion == 2): self.lendBookByTitle()
         elif (eleccion == 3): self.lendBookByAuthor()
-        else: self.generalMenu()
+        elif (eleccion == 4): self.generalMenu()
+        else: print("\n\n            Opción no válida, por favor intenta de nuevo.")
+        self.lendBookMenu()
 
     def returnBookMenu(self):
         userId = input("\n\n            Porfavor digita el id del usuario que va a regresar el libro: ")
         validation = self.validateUser(userId)
-        if(~validation):
+        if not validation:
             print("Usuario no existe, volviendo al menu anterior...")
         else: print("devuelto")
 
@@ -72,10 +74,13 @@ class Main:
 
         eleccion = int(input("            Por favor, ingresa el número de tu elección: "))
 
-        if(eleccion == 1):
+        if (eleccion == 3):
+            return
+        elif (eleccion == 1):
             self.lendBookMenu()
         elif (eleccion == 2): self.returnBookMenu()
-        else: return
+        else: print("\n\n            Opción no válida, por favor intenta de nuevo.")
+        self.generalMenu()
 
     sobreviviendoAEscobar = EBook("0", "Sobreviviendo a Escobar", "JJ", "100", "un libro mas", "3", "2020")
     LaBiblia = EBook("1", "La Santa Biblia", "Diosito", "1000", "el libro de la vida", "100", "0")
