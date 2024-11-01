@@ -1,6 +1,3 @@
-from models.books.EBook import EBook
-from models.books.PhysicalBook import PhysicalBook
-
 class Main:
 
     def lendBookMenu(self):
@@ -81,11 +78,6 @@ class Main:
         elif (eleccion == 2): self.returnBookMenu()
         else: print("\n\n            Opción no válida, por favor intenta de nuevo.")
         self.generalMenu()
-
-    sobreviviendoAEscobar = EBook("0", "Sobreviviendo a Escobar", "JJ", "100", "un libro mas", "3", "2020")
-    LaBiblia = EBook("1", "La Santa Biblia", "Diosito", "1000", "el libro de la vida", "100", "0")
-    LaBiblia = PhysicalBook("1", "La Santa Biblia", "Diosito", "100", "el libro de la vida", "100", "0", False)
-
 
 project = Main()
 
