@@ -35,11 +35,7 @@ class Main:
 
     def returnBookMenu(self):
         userId = input("\n\n            Porfavor digita el id del usuario que va a regresar el libro: ")
-        validation = self.validateUser(userId)
-        if not validation:
-            print("Usuario no existe, volviendo al menu anterior...")
-        else: print("devuelto")
-
+        self.validateUser(userId)
 
     def lendBookById(self, id):
         pass
@@ -95,8 +91,33 @@ class Main:
     def getBookByAuthor(self, author):
         pass
 
-    def validateUser(self, id):
-        pass
+# TO DO: FIX THIS METHOD
+    # def validateUser(self, id):
+    #     user = None
+
+    #     for user in users["students"] + users["teachers"]:
+    #         if user.id == id:
+    #             user = user
+    #             break
+
+    #     if user:
+    #         if user.booksLimit == 5:
+    #             if user.booksBorrowed == 5:
+    #                 print("Usuario ya tiene 5 libros prestados")
+    #                 self.generalMenu()
+    #             print(f"El usuario tiene {user.booksBorrowed} prestados")
+    #             self.generalMenu()
+
+    #         elif user.booksBorrowed == 3:
+    #             if user.booksBorrowed == 3:
+    #                 print("Usuario ya tiene 3 libros prestados")
+    #                 self.generalMenu()
+    #             print(f"El usuario tiene {user.booksBorrowed} prestados")
+    #             self.generalMenu()
+
+    #     else:
+    #         print("Usuario no encontrado")
+    #         self.generalMenu()
 
     def goBack(self):
         pass
@@ -120,7 +141,8 @@ class Main:
             return
         elif (eleccion == 1):
             self.lendBookMenu()
-        elif (eleccion == 2): self.returnBookMenu()
+        elif (eleccion == 2):
+            self.returnBookMenu()
         else: print("\n\n            Opción no válida, por favor intenta de nuevo.")
         self.generalMenu()
 
