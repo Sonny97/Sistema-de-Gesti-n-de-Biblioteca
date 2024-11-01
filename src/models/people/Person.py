@@ -8,4 +8,4 @@ class Person:
 
 
     def describeUser(self):
-        pass
+        return print(f"Name: {self.name}\nLast Name: {self.lastName}\nBirth Date: {self.birthDate}")
