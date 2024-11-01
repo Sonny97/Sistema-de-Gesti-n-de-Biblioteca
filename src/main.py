@@ -18,10 +18,13 @@ class Main:
         eleccion = int(input("            Por favor, ingresa el número de tu elección: "))
 
         if (eleccion == 1):
-            bookId = input("\n\n            Por favor, ingresa el ID del libro: ")
+            bookId = input("\n\n            ID del libro: ")
             self.getBookById(bookId)
 
-        elif (eleccion == 2): self.lendBookByTitle()
+        elif (eleccion == 2):
+            title = input("\n\n            Título del libro: ")
+            self.lendBookByTitle(title)
+
         elif (eleccion == 3): self.lendBookByAuthor()
         elif (eleccion == 4): self.generalMenu()
         else: print("\n\n            Opción no válida, por favor intenta de nuevo.")
@@ -39,7 +42,18 @@ class Main:
         pass
 
     def lendBookByTitle(self, title):
-        pass
+        bookFound = None
+
+        for book in books["ebooks"] + books["physical_books"]:
+            if book.title.lower() == title.lower():
+                bookFound = book
+                break
+
+        if bookFound:
+            print("\n\n            ¡Libro encontrado, que lo disfrutes! \n", bookFound)
+            self.generalMenu()
+        else:
+            print("Libro no encontrado")
 
     def lendBookByAuthor(self, author):
         pass
@@ -56,7 +70,8 @@ class Main:
                 break
 
         if bookFound:
-            print("\n\n            ¡Libro encontrado! \n", bookFound)
+            print("\n\n            ¡Libro encontrado, que lo disfrutes! \n", bookFound)
+            self.generalMenu()
         else:
             print("Libro no encontrado")
 
