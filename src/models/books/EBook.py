@@ -1,4 +1,5 @@
 from .Book import Book
+import json
 
 class EBook(Book):
 
@@ -8,3 +9,14 @@ class EBook(Book):
 
     def download(self, id):
         pass
+
+    def __str__(self):
+        return json.dumps({
+            "id": self.id,
+            "title": self.title,
+            "author": self.author,
+            "pages": self.pages,
+            "description": self.description,
+            "quantity": self.quantity,
+            "publicationYear": self.publicationYear
+        }, indent=4)
