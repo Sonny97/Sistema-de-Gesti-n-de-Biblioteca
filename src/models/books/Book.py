@@ -9,8 +9,11 @@ class Book:
         self.publicationYear = publicationYear
 
 
-    def describeBook():
-        pass
+    def describeBook(self):
+        return print(f"Title: {self.title}\nAuthor: {self.author}\nPages: {self.pages}\nDescription: {self.description}\nQuantity: {self.quantity}\nPublication Year: {self.publicationYear}")
 
-    def validateQuantity():
-        pass
+    def validateQuantity(self):
+        if self.quantity > 0:
+            return True
+        else:
+            return False

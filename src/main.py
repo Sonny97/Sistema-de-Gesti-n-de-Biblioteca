@@ -1,73 +1,151 @@
-from models.books.EBook import EBook
-from models.books.PhysicalBook import PhysicalBook
+from data.books import books
+from data.users import users
 
-class main:
-    
-    def lendBookMenu():
-        print(""" como deseas buscar el libro a prestar?
-              1. para buscar por Id.
-              2. para buscar por titulo.
-              3. para buscar por author.
-              *. para volver al menu anterior.
-              """)
-        
-        eleccion = int(input())
+class Main:
 
-        if(eleccion == 1): self.getBookById()
-        elif (eleccion == 2): self.lendBookByTitle()
-        elif (eleccion == 3): self.lendBookByAuthor()
-        else: self.generalMenu()
-    
-    def returnBookMenu():
-        print(""" Porfavor digita el id del usuario que va a regresar el libro""")
-        userId = input()
-        validation = self.validateUser(userId)
-        if(~validation): 
-            print("Usuario no existe, volviendo al menu anterior...")
-        else: print("devuelto")
-        
+    def lendBookMenu(self):
+        print("""
+            =========================================
+            |¿Cómo deseas buscar el libro a prestar?|
+            =========================================
 
-    def lendBookById(id):
+                1. Buscar por ID
+                2. Buscar por Título
+                3. Buscar por Autor
+                4. Volver al menú anterior
+            """)
+
+        eleccion = int(input("            Por favor, ingresa el número de tu elección: "))
+
+        if (eleccion == 1):
+            bookId = input("\n\n            ID del libro: ")
+            self.getBookById(bookId)
+
+        elif (eleccion == 2):
+            title = input("\n\n            Título del libro: ")
+            self.lendBookByTitle(title)
+
+        elif (eleccion == 3):
+            author = input("\n\n            Autor del libro: ")
+            self.lendBookByAuthor(author)
+
+        elif (eleccion == 4): self.generalMenu()
+        else: print("\n\n            Opción no válida, por favor intenta de nuevo.")
+        self.lendBookMenu()
+
+    def returnBookMenu(self):
+        userId = input("\n\n            Porfavor digita el id del usuario que va a regresar el libro: ")
+        self.validateUser(userId)
+
+    def lendBookById(self, id):
         pass
 
-    def lendBookByTitle(title):
+    def lendBookByTitle(self, title):
+        bookFound = None
+
+        for book in books["ebooks"] + books["physical_books"]:
+            if book.title.lower() == title.lower():
+                bookFound = book
+                break
+
+        if bookFound:
+            print("\n\n            ¡Libro encontrado, que lo disfrutes! \n", bookFound)
+            self.generalMenu()
+        else:
+            print("Libro no encontrado")
+
+    def lendBookByAuthor(self, author):
+        bookFound = None
+
+        for book in books["ebooks"] + books["physical_books"]:
+            if book.author.lower() == author.lower():
+                bookFound = book
+                break
+
+        if bookFound:
+            print("\n\n            ¡Libro encontrado, que lo disfrutes! \n", bookFound)
+            self.generalMenu()
+        else:
+            print("Libro no encontrado")
+
+    def getUserById(self, id):
         pass
 
-    def lendBookByAuthor(author):
+    def getBookById(self, id):
+        bookFound = None
+
+        for book in books["ebooks"] + books["physical_books"]:
+            if book.id == id:
+                bookFound = book
+                break
+
+        if bookFound:
+            print("\n\n            ¡Libro encontrado, que lo disfrutes! \n", bookFound)
+            self.generalMenu()
+        else:
+            print("Libro no encontrado")
+
+    def getBookByTitle(self, title):
         pass
 
-    def getUserById(id):
+    def getBookByAuthor(self, author):
         pass
 
-    def getBookById(id):
-        pass
+# TO DO: FIX THIS METHOD
+    # def validateUser(self, id):
+    #     user = None
 
-    def getBookByTitle(title):
-        pass
+    #     for user in users["students"] + users["teachers"]:
+    #         if user.id == id:
+    #             user = user
+    #             break
 
-    def getBookByAuthor(author):
-        pass
+    #     if user:
+    #         if user.booksLimit == 5:
+    #             if user.booksBorrowed == 5:
+    #                 print("Usuario ya tiene 5 libros prestados")
+    #                 self.generalMenu()
+    #             print(f"El usuario tiene {user.booksBorrowed} prestados")
+    #             self.generalMenu()
 
-    def validateUser(self, id):
-        pass
- 
-    def goBack():
+    #         elif user.booksBorrowed == 3:
+    #             if user.booksBorrowed == 3:
+    #                 print("Usuario ya tiene 3 libros prestados")
+    #                 self.generalMenu()
+    #             print(f"El usuario tiene {user.booksBorrowed} prestados")
+    #             self.generalMenu()
+
+    #     else:
+    #         print("Usuario no encontrado")
+    #         self.generalMenu()
+
+    def goBack(self):
         pass
 
     def generalMenu(self):
-        print(""" Bienvenido al sistema de prestamos, que deseas hacer?
-              1. para prestar un libro.
-              2. para retornar un libro.
-              * para salir del programa.
-              """)
-        eleccion = int(input())
+        print("""
+            ======================================
+            | Bienvenido al Sistema de Préstamos |
+            ======================================
 
-        if(eleccion == 1): 
+            ¿Qué te gustaría hacer?
+
+                1. Prestar un libro
+                2. Devolver un libro
+                3. Salir del programa
+            """)
+
+        eleccion = int(input("            Por favor, ingresa el número de tu elección: "))
+
+        if (eleccion == 3):
+            return
+        elif (eleccion == 1):
             self.lendBookMenu()
-        elif (eleccion == 2): returnBookMenu()
-        else: return
-    
-    sobreviviendoAEscobar = EBook("0", "Sobreviviendo a Escobar", "JJ", "100", "un libro mas", "3", "2020")
-    LaBiblia = EBook("1", "La Santa Biblia", "Diosito", "1000", "el libro de la vida", "100", "0")
-    LaBiblia = PhysicalBook("1", "La Santa Biblia", "Diosito", "100", "el libro de la vida", "100", "0", False)
-    generalMenu()
+        elif (eleccion == 2):
+            self.returnBookMenu()
+        else: print("\n\n            Opción no válida, por favor intenta de nuevo.")
+        self.generalMenu()
+
+project = Main()
+
+project.generalMenu()
