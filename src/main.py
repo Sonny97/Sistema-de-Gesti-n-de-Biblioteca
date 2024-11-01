@@ -4,14 +4,18 @@ from models.books.PhysicalBook import PhysicalBook
 class Main:
 
     def lendBookMenu(self):
-        print(""" como deseas buscar el libro a prestar?
-              1. para buscar por Id.
-              2. para buscar por titulo.
-              3. para buscar por author.
-              *. para volver al menu anterior.
-              """)
+        print("""
+            =========================================
+            |¿Cómo deseas buscar el libro a prestar?|
+            =========================================
 
-        eleccion = int(input())
+                1. Buscar por ID
+                2. Buscar por Título
+                3. Buscar por Autor
+                4. Volver al menú anterior
+            """)
+
+        eleccion = int(input("            Por favor, ingresa el número de tu elección: "))
 
         if(eleccion == 1): self.getBookById()
         elif (eleccion == 2): self.lendBookByTitle()
@@ -19,8 +23,7 @@ class Main:
         else: self.generalMenu()
 
     def returnBookMenu(self):
-        print(""" Porfavor digita el id del usuario que va a regresar el libro""")
-        userId = input()
+        userId = input("\n\n            Porfavor digita el id del usuario que va a regresar el libro: ")
         validation = self.validateUser(userId)
         if(~validation):
             print("Usuario no existe, volviendo al menu anterior...")
@@ -55,12 +58,19 @@ class Main:
         pass
 
     def generalMenu(self):
-        print(""" Bienvenido al sistema de prestamos, que deseas hacer?
-              1. para prestar un libro.
-              2. para retornar un libro.
-              * para salir del programa.
-              """)
-        eleccion = int(input())
+        print("""
+            ======================================
+            | Bienvenido al Sistema de Préstamos |
+            ======================================
+
+            ¿Qué te gustaría hacer?
+
+                1. Prestar un libro
+                2. Devolver un libro
+                3. Salir del programa
+            """)
+
+        eleccion = int(input("            Por favor, ingresa el número de tu elección: "))
 
         if(eleccion == 1):
             self.lendBookMenu()
