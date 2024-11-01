@@ -92,32 +92,32 @@ class Main:
         pass
 
 # TO DO: FIX THIS METHOD
-    # def validateUser(self, id):
-    #     user = None
+     def validateUser(self, id):
+         user = None
 
-    #     for user in users["students"] + users["teachers"]:
-    #         if user.id == id:
-    #             user = user
-    #             break
+         for user in users["students"] + users["teachers"]:
+             if user.id == id:
+                 user = user
+                 break
 
-    #     if user:
-    #         if user.booksLimit == 5:
-    #             if user.booksBorrowed == 5:
-    #                 print("Usuario ya tiene 5 libros prestados")
-    #                 self.generalMenu()
-    #             print(f"El usuario tiene {user.booksBorrowed} prestados")
-    #             self.generalMenu()
+         if user:
+             if user.booksLimit == 5:
+                 if user.booksBorrowed == 5:
+                     print("Usuario ya tiene 5 libros prestados")
+                     self.generalMenu()
+                 print(f"El usuario tiene {user.booksBorrowed} prestados")
+                 self.generalMenu()
 
-    #         elif user.booksBorrowed == 3:
-    #             if user.booksBorrowed == 3:
-    #                 print("Usuario ya tiene 3 libros prestados")
-    #                 self.generalMenu()
-    #             print(f"El usuario tiene {user.booksBorrowed} prestados")
-    #             self.generalMenu()
+             elif user.booksBorrowed == 3:
+                 if user.booksBorrowed == 3:
+                     print("Usuario ya tiene 3 libros prestados")
+                     self.generalMenu()
+                 print(f"El usuario tiene {user.booksBorrowed} prestados")
+                 self.generalMenu()
 
-    #     else:
-    #         print("Usuario no encontrado")
-    #         self.generalMenu()
+         else:
+             print("Usuario no encontrado")
+             self.generalMenu()
 
     def goBack(self):
         pass
